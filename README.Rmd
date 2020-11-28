@@ -37,9 +37,29 @@ library(datahut)
 ## basic example code
 library(fable)
 library(ggplot2)
-autoplot(tourist_sl)+
+head(touristsl)
+autoplot(touristsl)+
   ggtitle("Tourist arrivals to Sri Lanka from 1970 to 2018")+
   xlab("Year") +
   ylab("Tourist Arrivals")
 ```
 
+```{r}
+head(touristsl_monthly)
+touristsl_monthly[433:588,]  %>% autoplot()
+
+touristsl_monthly%>% autoplot(Arrivals)
+```
+
+
+```{r}
+library(feasts)
+touristsl_monthly %>% gg_season(Arrivals, labels = "both") + ylab("Arrivals") +
+ggtitle("Seasonal plot: Monthly tourist arrivals to Sri Lanka")
+```
+
+```{r}
+touristsl_monthly %>%
+gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Monthly tourist arrivals to Sri Lanka")
+
+```
