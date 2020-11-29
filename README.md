@@ -23,6 +23,17 @@ devtools::install_github("pridiltal/datahut")
 
 This is a basic example which shows you how to solve a common problem:
 
+### Tourism in Sri Lanka
+
+**Special events**
+
+  - There was a civil war in the country from July 1983 to May 2009.
+  - On 26 December 2004, Sri Lanka became a victim of the Indian Ocean
+    Tsunami.
+  - Sri Lanka Easter bombings happened on 21 April 2019.
+
+<!-- end list -->
+
 ``` r
 library(datahut)
 ## basic example code
@@ -59,22 +70,22 @@ head(touristsl_monthly)
 #> 4 1971 Apr     1539
 #> 5 1971 May      952
 #> 6 1971 Jun      961
-touristsl_monthly[433:588,]  %>% autoplot()
-#> Plot variable not specified, automatically selected `.vars = Arrivals`
+touristsl_monthly%>% autoplot(Arrivals)
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ``` r
-
-touristsl_monthly%>% autoplot(Arrivals)
+touristsl_monthly[433:588,]  %>% autoplot()
+#> Plot variable not specified, automatically selected `.vars = Arrivals`
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
 
 ``` r
 library(feasts)
-touristsl_monthly %>% gg_season(Arrivals, labels = "both") + ylab("Arrivals") +
+touristsl_monthly %>%
+  feasts::gg_season(Arrivals, labels = "both") +   ylab("Arrivals") +
 ggtitle("Seasonal plot: Monthly tourist arrivals to Sri Lanka")
 ```
 
@@ -82,7 +93,7 @@ ggtitle("Seasonal plot: Monthly tourist arrivals to Sri Lanka")
 
 ``` r
 touristsl_monthly %>%
-gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Monthly tourist arrivals to Sri Lanka")
+feasts::gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Monthly tourist arrivals to Sri Lanka")
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
