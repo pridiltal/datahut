@@ -98,6 +98,31 @@ feasts::gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Mon
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
+#### Tourist arrivals to Sri Lanka by purpose of visit
+
+``` r
+head(touristsl_purpose)
+#> # A tsibble: 6 x 3 [1Y]
+#> # Key:       Purpose [1]
+#>    Year Purpose  Arrivals
+#>   <int> <chr>       <dbl>
+#> 1  2006 Business    99609
+#> 2  2007 Business    51871
+#> 3  2008 Business    37270
+#> 4  2009 Business    38519
+#> 5  2010 Business    83118
+#> 6  2011 Business    68478
+p<- autoplot(touristsl_purpose) +
+  geom_point(aes(shape= Purpose)) +
+  scale_shape_manual(values = 1:11)
+#> Plot variable not specified, automatically selected `.vars = Arrivals`
+print(p)
+#> Warning: Removed 32 row(s) containing missing values (geom_path).
+#> Warning: Removed 32 rows containing missing values (geom_point).
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
 ### Unemployment in Sri Lanka
 
 ``` r
@@ -123,7 +148,7 @@ head(unemp_ratesl)
 unemp_ratesl %>% autoplot(Total)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ``` r
 p <- unemp_ratesl %>%
@@ -136,4 +161,4 @@ p <- unemp_ratesl %>%
 print(p)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-2.png" width="100%" />

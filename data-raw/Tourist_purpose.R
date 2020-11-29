@@ -5,9 +5,8 @@
 library(tidyverse)
 library(tsibble)
 
-# Read Data. touristsl_monthly.csv contains tourist monthly arrivals to Sri Lanka
+# Read Data. touristsl_monthly.csv contains tourist arrivals to Sri Lanka by purpose of visit
 tourist_purpose<-read.csv(here::here("data-raw", "tourist_by_purpose.csv"),header = TRUE)
-tourist_purpose <- tourist_purpose %>% select(-Total_arrivals)
 touristsl_purpose <- tourist_purpose %>%
   pivot_longer(-Year, names_to = "Purpose", values_to = "Arrivals") %>%
   as_tsibble(index = Year, key = Purpose)

@@ -17,7 +17,7 @@
 #' On 26 December 2004, Sri Lanka became a victim of the Indian Ocean Tsunami.
 #' @format Time series of class tsibble
 #' \describe{
-#' \item{Yea}{Year}
+#' \item{Year}{Year}
 #' \item{Total}{Total unemployment rate}
 #' \item{Male}{Male unemployment rate}
 #' \item{Female}{Female unemployment rate}

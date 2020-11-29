@@ -72,6 +72,16 @@ feasts::gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Mon
 
 ```
 
+#### Tourist arrivals to Sri Lanka by purpose of visit
+
+```{r}
+head(touristsl_purpose)
+p<- autoplot(touristsl_purpose) +
+  geom_point(aes(shape= Purpose)) +
+  scale_shape_manual(values = 1:11)
+print(p)
+```
+
 ### Unemployment in Sri Lanka 
 
 
@@ -88,3 +98,5 @@ p <- unemp_ratesl %>%
 print(p)
 
 ```
+
+

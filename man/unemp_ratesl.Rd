@@ -7,7 +7,7 @@
 \format{
 Time series of class tsibble
 \describe{
-\item{Yea}{Year}
+\item{Year}{Year}
 \item{Total}{Total unemployment rate}
 \item{Male}{Male unemployment rate}
 \item{Female}{Female unemployment rate}
