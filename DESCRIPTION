@@ -6,7 +6,11 @@ Authors@R: person("Priyanga Dilini", "Talagala", email="pritalagala@gmail.com", 
 Maintainer: Priyanga Dilini Talagala <pritalagala@gmail.com>
 Description: Provides datasets for statistical data analysis.
 Suggests:
-  fable
+  fable,
+  tidyr,
+  dplyr,
+  tsibble,
+  magrittr
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

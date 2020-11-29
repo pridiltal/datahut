@@ -25,10 +25,11 @@ On 26 December 2004, Sri Lanka became a victim of the Indian Ocean Tsunami.
 }
 \examples{
 library(fable)
+library(magrittr)
 head(touristsl_monthly)
 touristsl_monthly[433:588,]  \%>\% autoplot()
 }
 \author{
-Priyanga Dilini Talagala, Claire Kermorvant
+Priyanga Dilini Talagala
 }
 \keyword{datasets}

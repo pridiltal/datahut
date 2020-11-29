@@ -28,6 +28,6 @@ library(fable)
 autoplot(touristsl)
 }
 \author{
-Priyanga Dilini Talagala, Claire Kermorvant
+Priyanga Dilini Talagala
 }
 \keyword{datasets}

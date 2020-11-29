@@ -97,3 +97,43 @@ feasts::gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Mon
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+### Unemployment in Sri Lanka
+
+``` r
+library(tidyverse)
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+#> ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+#> ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+#> ✓ readr   1.4.0     ✓ forcats 0.5.0
+#> ✓ purrr   0.3.4
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+#> x dplyr::filter() masks stats::filter()
+#> x dplyr::lag()    masks stats::lag()
+head(unemp_ratesl)
+#> # A tsibble: 6 x 4 [1Y]
+#>    Year Total  Male Female
+#>   <int> <dbl> <dbl>  <dbl>
+#> 1  1990  15.9  11.1   23.4
+#> 2  1991  14.7  10.1   23  
+#> 3  1992  14.6  10.7   22.8
+#> 4  1993  13.8   9.7   21.7
+#> 5  1994  13.1   9.7   20.1
+#> 6  1995  12.3   9     18.7
+unemp_ratesl %>% autoplot(Total)
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+``` r
+p <- unemp_ratesl %>%
+  select(Year, Male, Female) %>%
+  pivot_longer(-Year, names_to = "Gender", values_to = "Unemployment_rate") %>%
+  as_tsibble(index = Year, key = Gender) %>%
+  autoplot()
+#> Plot variable not specified, automatically selected `.vars = Unemployment_rate`
+
+print(p)
+```
+
+<img src="man/figures/README-unnamed-chunk-5-2.png" width="100%" />

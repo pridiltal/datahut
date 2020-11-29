@@ -71,3 +71,20 @@ touristsl_monthly %>%
 feasts::gg_subseries(Arrivals) + ylab("Arrivals") + ggtitle("Subseries plot: Monthly tourist arrivals to Sri Lanka")
 
 ```
+
+### Unemployment in Sri Lanka 
+
+
+```{r}
+library(tidyverse)
+head(unemp_ratesl)
+unemp_ratesl %>% autoplot(Total)
+p <- unemp_ratesl %>%
+  select(Year, Male, Female) %>%
+  pivot_longer(-Year, names_to = "Gender", values_to = "Unemployment_rate") %>%
+  as_tsibble(index = Year, key = Gender) %>%
+  autoplot()
+
+print(p)
+
+```

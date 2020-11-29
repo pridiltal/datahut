@@ -12,7 +12,7 @@
 #'
 #' @source Annual Statistical Reports, Sri Lanka Tourism Development Authority
 #'
-#' @author Priyanga Dilini Talagala, Claire Kermorvant
+#' @author Priyanga Dilini Talagala
 #'
 #' @examples
 #' library(fable)

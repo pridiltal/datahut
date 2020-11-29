@@ -12,10 +12,11 @@
 #'
 #' @source Annual Statistical Reports, Sri Lanka Tourism Development Authority
 #'
-#' @author Priyanga Dilini Talagala, Claire Kermorvant
+#' @author Priyanga Dilini Talagala
 #'
 #' @examples
 #' library(fable)
+#' library(magrittr)
 #' head(touristsl_monthly)
 #' touristsl_monthly[433:588,]  %>% autoplot()
 "touristsl_monthly"
